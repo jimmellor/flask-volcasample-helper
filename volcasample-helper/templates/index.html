@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+{% block html %}
+{% block head %}
+{% block styles -%}
+    {{super()}}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+{% endblock %}
+<title>Volca Sample Helper</title>
+{% endblock %}
+{% block body %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Korg Volca Sample Helper <span class="label label-info">NEW!</span></h1>
+        <p class="lead">Drag samples to the slots, click to audition, press and hold to upload</p>
+    </div>
+    <form id="upload-form" action="{{ url_for('upload', slot_id = slot) }}" method="POST" enctype="multipart/form-data">
+        <ul>
+        {% for slot in range(100) %}
+            <li class="samplebox" id="{{ '%02d' % slot }}">
+                {{ '%02d' % slot }}
+            </li>
+        {% endfor %}
+        </ul>
+    </form>
+</div>
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mobile-1.4.5.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/uploadr.js') }}"></script>
+{% endblock %}
+{% endblock %}
+{% endblock %}
+{% endblock %}
