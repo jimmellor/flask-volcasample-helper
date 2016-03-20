@@ -5,9 +5,9 @@ from __future__ import unicode_literals
 import sys
 import argparse
 
-from uploadr.app import app
+from volcasamplehelper.app import app
 
-parser = argparse.ArgumentParser(description="Uploadr")
+parser = argparse.ArgumentParser(description="Volca Sample Helper")
 parser.add_argument(
     "--port", "-p",
     type=int,
