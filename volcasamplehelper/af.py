@@ -60,6 +60,7 @@ def syroplay(filename):
 	syrostream_file = os.path.join(os.path.dirname(filename), SYRO_SUBDIR_NAME, (SYRO_DATA_PREFIX + os.path.basename(filename)))
 	
 	cmd = [AUDIO_PLAYER_EXEC, syrostream_file]
+	print cmd
 	p = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 	out,err = p.communicate()
 	return out
