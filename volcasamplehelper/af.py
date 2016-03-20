@@ -3,7 +3,7 @@ import os
 
 SYRO_SUBDIR_NAME = "syrodata"
 SYRO_DATA_PREFIX = "syrodata_"
-SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "uploadr/static/bin/syro")
+SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static/bin/syro")
 SYRO_EXEC = "syro_volcasample_example"
 AUDIO_PLAYER_EXEC = "afpay"
 
