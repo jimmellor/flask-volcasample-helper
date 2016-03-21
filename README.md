@@ -12,7 +12,7 @@ Clone the repo somewhere sensible. Change to the flask-volcasampler-helper direc
 
 Install the requirements:
 ```
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Note: Depending on your system you may need to alter the playback device and the version of the Syro example app. Modify af.py to suit.
