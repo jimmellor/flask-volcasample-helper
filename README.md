@@ -29,5 +29,5 @@ You should see:
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
 
-Success! point your browser at that address and you'll see the UI.
+Success! Point your browser at that address and you'll see the UI.
 
