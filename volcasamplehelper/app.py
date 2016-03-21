@@ -72,7 +72,7 @@ def syroupload(slot_id):
     """
 
     # Get the files.
-    root = "static/uploads/%s" % slot_id
+    root = os.path.join(APP_ROOT, UPLOAD_ROOT, slot_id)
 
     if not os.path.isdir(root):
         return "Error: Slot directory not found!"
@@ -82,7 +82,9 @@ def syroupload(slot_id):
         fname = file.split(os.sep)[-1]
         files.append(fname)
 
-    filename = os.path.join(APP_ROOT,root,files[0])
+    filename = os.path.join(root,files[0])
+
+    print filename
 
     syroplay(filename)
 
