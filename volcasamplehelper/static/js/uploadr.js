@@ -92,7 +92,6 @@ function doUpload(slot) {
         data: fd,
         success: function(data) {
             $progressBar.css({"width": "100%"});
-            data = JSON.parse(data);
 
             // How'd it go?
             if (data.status === "error") {
@@ -175,12 +174,12 @@ function syroPlayStop(slot) {
 }
 
 function playSample(slot) {
-    playStart(slot);
     $.ajax({
         type: 'GET',
         url: PLAY_URL + slot.attr('id'),
         success: function(data) {
-            audioPlay(JSON.parse(data).msg);
+            playStart(slot);
+            audioPlay(data.msg);
             playStop(slot);
         }
     });

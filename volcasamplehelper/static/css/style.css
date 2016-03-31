@@ -13,8 +13,6 @@
              url('../../static/fonts/digital-7_mono-webfont.svg#Digital7Mono') format('svg');
         font-weight: normal;
         font-style: normal;
-
-
     }
 
 span.background-num {
@@ -58,6 +56,11 @@ li.samplebox.active {
 }
 
 li.samplebox.uploading {
+    background-color: #C3D2DF;
+    color: rgb(0, 255, 0);
+}
+
+li.samplebox.ready {
     background-color: #C3D2DF;
     color: rgb(0, 255, 0);
 }
