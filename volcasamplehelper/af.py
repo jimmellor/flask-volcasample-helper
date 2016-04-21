@@ -4,17 +4,18 @@ import os
 SYRO_SUBDIR_NAME = "syrodata"
 SYRO_DATA_PREFIX = "syrodata_"
 # Uncomment/comment as appropriate
-SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static/bin/syro-mac") #OSX
-#SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static/bin/syro-raspi") #RasPi
+#SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static/bin/syro-mac") #OSX
+SYRO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static/bin/syro-raspi") #RasPi
 SYRO_EXEC = "syro_volcasample_example"
-AUDIO_PLAYER_EXEC = "afplay" # OSX
-# AUDIO_PLAYER_EXEC = "aplay"
+#AUDIO_PLAYER_EXEC = "afplay" # OSX
+AUDIO_PLAYER_EXEC = "play"
 
 def afplay(filename):
 	"""
 	Play a file via the audio out of the server 
 	"""
-	cmd = [AUDIO_PLAYER_EXEC,filename]
+	volume = "-v 0.2"
+	cmd = [AUDIO_PLAYER_EXEC,volume,filename]
 	p = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 	out,err = p.communicate()
 	return out
