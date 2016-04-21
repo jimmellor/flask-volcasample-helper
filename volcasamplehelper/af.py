@@ -56,11 +56,12 @@ def syroplay(filename):
 	"""
 	Play a file via the audio out of the server, take the path of the source file and open the syro-encoded output
 	"""
-	
+	volume = "-v 0.2"
+
 	# work out the location of the encoded file from the source file
 	syrostream_file = os.path.join(os.path.dirname(filename), SYRO_SUBDIR_NAME, (SYRO_DATA_PREFIX + os.path.basename(filename)))
 	
-	cmd = [AUDIO_PLAYER_EXEC, syrostream_file]
+	cmd = [AUDIO_PLAYER_EXEC, volume, syrostream_file]
 	print cmd
 	p = subprocess.Popen(cmd, stdout = subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
 	out,err = p.communicate()
