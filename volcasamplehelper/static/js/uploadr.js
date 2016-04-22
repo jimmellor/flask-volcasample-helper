@@ -103,6 +103,7 @@ function doUpload(slot) {
             else {
                 // Ok! Get the UUID.
                 var uuid = data.msg;
+                PENDING_FILES = [];
                 // window.location = NEXT_URL + uuid;
             }
         },
@@ -147,9 +148,10 @@ function collectFormData() {
 
 function handleFiles(files) {
     // Add them to the pending files list.
-    for (var i = 0, ie = files.length; i < ie; i++) {
-        PENDING_FILES.push(files[i]);
-    }
+    // for (var i = 0, ie = files.length; i < ie; i++) {
+    //     PENDING_FILES.push(files[i]);
+    // }
+    PENDING_FILES[0] = files[0];
 }
 
 function syroPlaySample(slot) {
